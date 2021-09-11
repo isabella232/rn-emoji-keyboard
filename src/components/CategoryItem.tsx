@@ -11,7 +11,7 @@ type CategoryItemProps = {
 }
 
 export const CategoryItem = ({ item, index, handleScrollToCategory }: CategoryItemProps) => {
-  const { activeCategoryIndex, categoryColor, activeCategoryColor, setActiveCategoryIndex } =
+  const { activeCategoryIndex, searchPhrase, categoryColor, activeCategoryColor, setActiveCategoryIndex } =
     React.useContext(KeyboardContext)
 
   const handleSelect = () => {
@@ -21,9 +21,12 @@ export const CategoryItem = ({ item, index, handleScrollToCategory }: CategoryIt
 
   const getStylesBasedOnIndex = () => {
     const style: ViewStyle[] = [styles.container]
+    
     if (index === 0) {
       style.push({ marginLeft: 7 })
-    } else if (index === 7) {
+    } else if (index === 7 && searchPhrase === '') {
+      style.push({ marginRight: 7 })
+    }else if (index === 8 && searchPhrase !== ''){
       style.push({ marginRight: 7 })
     }
     return style
