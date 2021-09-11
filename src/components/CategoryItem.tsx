@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { View, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, ViewStyle, StyleSheet, TouchableOpacity } from 'react-native'
 import { KeyboardContext } from '../contexts/KeyboardContext'
 import type { CategoryNavigationItem, CategoryTypes } from '../types'
 import { Icon } from './Icon'
@@ -19,9 +19,19 @@ export const CategoryItem = ({ item, index, handleScrollToCategory }: CategoryIt
     setActiveCategoryIndex(index)
   }
 
+  const getStylesBasedOnIndex = () => {
+    const style: ViewStyle[] = [styles.container]
+    if (index === 0) {
+      style.push({ marginLeft: 7 })
+    } else if (index === 7) {
+      style.push({ marginRight: 7 })
+    }
+    return style
+  }
+
   return (
     <TouchableOpacity onPress={handleSelect}>
-      <View style={styles.container}>
+      <View style={getStylesBasedOnIndex()}>
         <Icon
           iconName={item.icon}
           isActive={activeCategoryIndex === index}
@@ -35,12 +45,13 @@ export const CategoryItem = ({ item, index, handleScrollToCategory }: CategoryIt
 
 const styles = StyleSheet.create({
   container: {
-    width: 28,
-    height: 28,
+    width: 40,
+    height: 40,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 3,
-    borderRadius: 6,
+    marginRight: -7,
+    marginLeft: -7,
+    borderRadius: 14,
   },
   icon: { textAlign: 'center' },
 })

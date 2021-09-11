@@ -9,7 +9,7 @@ import emojisByGroup from '../assets/emojis.json'
 import { SearchBar } from './SearchBar'
 import { useKeyboardStore } from '../store/useKeyboardStore'
 
-const CATEGORY_ELEMENT_WIDTH = 37
+const CATEGORY_ELEMENT_WIDTH = 34.9
 
 export const EmojiStaticKeyboard = () => {
   const { width } = useWindowDimensions()
