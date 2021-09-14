@@ -65,7 +65,7 @@ export const EmojiCategory = ({ item: { title, data } }: { item: EmojisByCategor
   return (
     <View style={[styles.container, { width: width }]}>
       {!hideHeader && <Text style={[styles.sectionTitle, headerStyles]}>{translation[title]}</Text>}
-      <FlatList
+      <FlatList nestedScrollEnabled
         data={[...data, ...empty]}
         keyExtractor={(emoji) => emoji.name}
         numColumns={numberOfColumns}

@@ -77,12 +77,11 @@ export const EmojiStaticKeyboard = () => {
     <View
       style={[
         styles.container,
-        styles.containerShadow,
         categoryPosition === 'top' && styles.containerReverse,
         containerStyles,
       ]}>
       {enableSearchBar && <SearchBar flatListRef={flatListRef} />}
-      <Animated.FlatList
+      <Animated.FlatList nestedScrollEnabled
         extraData={[keyboardState.recentlyUsed.length, searchPhrase]}
         data={renderList}
         keyExtractor={(item: EmojisByCategory) => item.title}
