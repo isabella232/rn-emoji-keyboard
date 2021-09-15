@@ -1,6 +1,6 @@
 {
   "name": "rn-emoji-keyboard",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Super performant, lightweight, fully customizable emoji picker. Designated to be user and developer friendly! 💖",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -37,7 +37,7 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/TheWidlarzGroup/rn-emoji-keyboard",
+  "repository": "https://github.com/status-im/rn-emoji-keyboard",
   "author": "Jakub Grzywacz <kontakt@jakubgrzywacz.pl> (https://github.com/jakex7)",
   "license": "MIT",
   "bugs": {
