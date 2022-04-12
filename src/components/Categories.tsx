@@ -122,12 +122,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   navigation: {
-    padding: 3,
     alignItems: 'center',
-    borderColor: '#00000011',
+    borderColor: '#EEF2F5',
   },
   navigationFloating: {
-    borderRadius: 8,
+    borderRadius: 20,
   },
   navigationBottom: {
     paddingVertical: 6,
@@ -145,18 +144,20 @@ const styles = StyleSheet.create({
   separator: {
     width: 1,
     height: 28,
-    backgroundColor: '#00000011',
+    backgroundColor: '#00000000',
     marginHorizontal: 4,
   },
   activeIndicator: {
     position: 'absolute',
-    width: 28,
-    height: 28,
-    borderRadius: 6,
+    width: 30,
+    height: 30,
+    borderRadius: 15,
   },
   activeIndicatorContainer: {
     position: 'absolute',
-    width: 28,
-    height: 28,
+    width: 30,
+    height: 30,
+    top: 5,
+    left: 12,
   },
 })

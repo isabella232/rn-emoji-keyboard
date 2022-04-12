@@ -9,7 +9,7 @@ import emojisByGroup from '../assets/emojis.json'
 import { SearchBar } from './SearchBar'
 import { useKeyboardStore } from '../store/useKeyboardStore'
 
-const CATEGORY_ELEMENT_WIDTH = 37
+const CATEGORY_ELEMENT_WIDTH = 34.9
 
 export const EmojiStaticKeyboard = () => {
   const { width } = useWindowDimensions()
@@ -77,12 +77,12 @@ export const EmojiStaticKeyboard = () => {
     <View
       style={[
         styles.container,
-        styles.containerShadow,
         categoryPosition === 'top' && styles.containerReverse,
         containerStyles,
       ]}>
       {enableSearchBar && <SearchBar flatListRef={flatListRef} />}
       <Animated.FlatList
+        nestedScrollEnabled={true}
         extraData={[keyboardState.recentlyUsed.length, searchPhrase]}
         data={renderList}
         keyExtractor={(item: EmojisByCategory) => item.title}
